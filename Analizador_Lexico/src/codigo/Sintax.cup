@@ -1,0 +1,30 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s){
+        this.s = s;
+}
+    public Symbol gets(){
+        return this.s;
+}
+:};
+
+terminal Int, If, Default, Start, End, Float,
+         String, Ob, Def, Switch, Op, Wh, While,
+         Linea, DoublePoints, Equal, Sum, Substraction,
+         Multiplication, Division, GreaterThan,
+         LessThan, Or, And, Negative, Identifier,
+         Number, LogicalOperator, Init, ERROR
+non terminal INICIO, SENTENCIA, DECLARACION;
+
+start with INICIO;
+
+INICIO ::= Start Identifier DoublePoints SENTENCIA DoublePoints End
+;
+SENTENCIA ::= Init Int Identifier DoublePoints | Init Int Identifier Equal DoublePoints
+;

@@ -607,7 +607,7 @@ class Lexer {
           }
         case 24: break;
         case 8: 
-          { return Subtraction;
+          { return Substraction;
           }
         case 25: break;
         case 13: 
@@ -619,7 +619,7 @@ class Lexer {
           }
         case 27: break;
         case 16: 
-          { lexeme=yytext();return Number;
+          { lexeme=yytext();return DoublePoints;
           }
         case 28: break;
         case 11: 

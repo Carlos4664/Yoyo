@@ -1,1 +1,7 @@
-< 4 45> 564^ asiszzdos || $ -^
+start 
+%int:
+%float
+%string
+Ob
+If
+udhydhfuf
