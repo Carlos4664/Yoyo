@@ -21,15 +21,15 @@ Default {lexeme=yytext(); return Default;}
 Def {lexeme=yytext(); return Def;}
 Switch {lexeme=yytext(); return Switch;}
 Op {lexeme=yytext(); return Op;}
-Wh {lexeme=yytext(); return Wh;}
 While {lexeme=yytext(); return While;}
+Wh {lexeme=yytext(); return Wh;}
+
 {espacio} {/*Ignore*/}
 "/? ?/".* {/*Ignore*/}
-"\n" {lexeme=yytext(); return Linea;}
-"%" lexeme=yytext(); return Init;
+"\n" {return Linea}
 "=" {lexeme=yytext(); return Equal;}
 "+" {lexeme=yytext(); return Sum;}
-"-" {lexeme=yytext(); return Substraction;}
+"-" {lexeme=yytext(); return Subtraction;}
 "*" {lexeme=yytext(); return Multiplication;}
 "/" {lexeme=yytext(); return Division;}
 ">" {lexeme=yytext(); return GreaterThan;}
@@ -37,9 +37,13 @@ While {lexeme=yytext(); return While;}
 "||" {lexeme=yytext(); return Or;}
 "^" {lexeme=yytext(); return And;}
 "-^" {lexeme=yytext(); return Negative;}
-":" {lexeme=yytext(); return DoublePoints;}
+":" {lexeme=yytext(); return DoublePoint;}
+"(" {lexeme=yytext(); return Parenthesis_O;}
+")" {lexeme=yytext(); return Parenthesis_C;}
+"%" {lexeme=yytext(); return Init;}
+
 {L}({L}|{D})* {lexeme=yytext(); return Identifier;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Number;}
 ("(>"{D}<")")|{D}+ {lexeme=yytext();return Number;}
 
- . {lexeme=yytext();return ERROR;}
+ . {return ERROR;}

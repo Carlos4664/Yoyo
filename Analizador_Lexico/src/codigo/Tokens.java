@@ -1,7 +1,17 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package codigo;
 
+/**
+ *
+ * @author candelariasarahi
+ */
 public enum Tokens {
+    Linea,
+    ReserverWord,
     Start,
     End,
     Int,
@@ -13,14 +23,11 @@ public enum Tokens {
     Def,
     Switch,
     Op,
-    Wh,
     While,
-    Linea,
-    DoublePoints,
+    Wh,
     Equal,
-    Init,
     Sum,
-    Substraction,
+    Subtraction,
     Multiplication,
     Division,
     GreaterThan,
@@ -28,9 +35,12 @@ public enum Tokens {
     Or,
     And,
     Negative,
+    DoublePoint,
+    Parenthesis_O,
+    Parenthesis_C,
+    Init,
     Identifier,
     Number,
     LogicalOperator,
-    ReservedWord,
     ERROR
 }

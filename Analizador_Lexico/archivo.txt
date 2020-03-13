@@ -1,7 +1,4 @@
-start 
-%int:
-%float
-%string
-Ob
-If
-udhydhfuf
+start Hola:
+If(a<b):
+4+6:
+:end

@@ -16,15 +16,16 @@ parser code
 
 terminal Int, If, Default, Start, End, Float,
          String, Ob, Def, Switch, Op, Wh, While,
-         Linea, DoublePoints, Equal, Sum, Substraction,
+         Linea, DoublePoint, Equal, Sum, Substraction,
          Multiplication, Division, GreaterThan,
          LessThan, Or, And, Negative, Identifier,
-         Number, LogicalOperator, Init, ERROR
+         Number, LogicalOperator, Init,Parenthesis_O,
+         Parenthesis_C, ERROR
 non terminal INICIO, SENTENCIA, DECLARACION;
 
 start with INICIO;
 
-INICIO ::= Start Identifier DoublePoints SENTENCIA DoublePoints End
+INICIO ::= Start Identifier DoublePoint SENTENCIA DoublePoint End
 ;
-SENTENCIA ::= Init Int Identifier DoublePoints | Init Int Identifier Equal DoublePoints
+SENTENCIA ::= Init Int Identifier DoublePoint | Init Int Identifier Equal Number DoublePoint
 ;
